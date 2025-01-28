@@ -1,16 +1,76 @@
 ---
-import logoBlanco from '../assets/logo-blanco.svg'
+import logoBlanco from "../assets/logo-blanco.svg";
+import Container from "./Container.astro";
+import Link from "./Link.astro";
+import ToggleMenu from "./ToggleMenu.astro";
+
+const routes = [
+  {
+    name: "Inicio",
+    path: "/",
+  },
+  {
+    name: "Quiénes Somos",
+    path: "/about",
+  },
+  {
+    name: "Portafolio",
+    path: "/portfolio",
+  },
+  {
+    name: "Blog o Recursos",
+    path: "/blog",
+  },
+  {
+    name: "Contacto",
+    path: "/contact",
+  },
+];
 ---
+
 <nav class="bg-primary-800 text-neutral-50 p-4">
-    <div class="container mx-auto flex items-center gap-4">
-        <img src={logoBlanco.src} alt="Logo de la empresa" class="h-10">
-        <ul class="flex items-center gap-8 ml-auto">
-            <li><a href="/">Inicio</a></li>
-            <li><a href="/about">Quiénes Somos</a></li>
-            <li><a href="/services">Servicios</a></li>
-            <li><a href="/portfolio">Portafolio</a></li>
-            <li><a href="/blog">Blog o Recursos</a></li>
-            <li><a href="/contact">Contacto</a></li>
+  <Container>
+    <div class="flex flex-wrap items-center justify-between">
+      <a href="/">
+        <img src={logoBlanco.src} alt="Logo de la empresa" class="h-10" />
+      </a>
+
+      <div class="flex items-center md:hidden">
+        <ToggleMenu />
+      </div>
+
+      <button id="menu-button" class="md:hidden p-2 rounded cursor-pointer">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="currentColor"
+          class="size-6"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M3 6.75A.75.75 0 0 1 3.75 6h16.5a.75.75 0 0 1 0 1.5H3.75A.75.75 0 0 1 3 6.75ZM3 12a.75.75 0 0 1 .75-.75h16.5a.75.75 0 0 1 0 1.5H3.75A.75.75 0 0 1 3 12Zm8.25 5.25a.75.75 0 0 1 .75-.75h8.25a.75.75 0 0 1 0 1.5H12a.75.75 0 0 1-.75-.75Z"
+            clip-rule="evenodd"></path>
+        </svg>
+      </button>
+
+      <div class="hidden w-full md:block md:w-auto" id="menu">
+        <ul
+          class="flex flex-col md:flex-row p-4 md:p-0 rounded-lg md:space-x-8 md:bg-primary-800 bg-primary-700 mt-4 md:mt-0"
+        >
+          {routes.map((route) => <Link path={route.path} name={route.name} />)}
         </ul>
+      </div>
     </div>
+  </Container>
 </nav>
+
+<script>
+  const $ = (key: string) => document.querySelector(key);
+
+  const button = $("#menu-button");
+
+  button!.addEventListener("click", () => {
+    const menu = $("#menu");
+    menu!.classList.toggle("hidden");
+  });
+</script>

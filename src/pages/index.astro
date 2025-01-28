@@ -1,21 +1,39 @@
 ---
-import Header from '../components/Header.astro';
-import Layout from '../layouts/Layout.astro';
+import Header from "../components/Header.astro";
+import Layout from "../layouts/Layout.astro";
+import designerLife from "../assets/illustrations/designer-life.svg";
+import Container from "../components/Container.astro";
 ---
 
 <Layout>
-	<Header>
-		<div class="grid grid-cols-2 gap-4">
-			<div class="col-span-1">
-				<h1 class="font-bold text-6xl">Get More Done with whitepace</h1>
-				<p class="text-lg mt-6">
-					Project management software that enables your teams to collaborate, plan, analyze and manage everyday tasks
-				</p>
-			</div>
-			<div class="col-span-1">
-				<img src="/images/hero.png" alt="Hero Image" class="w-full" />
-			</div>
+  <Header>
+    <Container>
+      <div class="grid grid-cols-2 gap-4">
+        <div class="col-span-2 lg:col-span-1">
+          <div class="space-y-4">
+            <h1 class="text-6xl font-bold">Transformamos tu Negocio</h1>
 
-		</div>
-	</Header>
+            <p class="text-lg">
+              Impulsa el crecimiento de tu negocio con nuestras soluciones de
+              software innovadoras.
+            </p>
+
+            <a href="/contact">
+              <button
+                class="p-5 bg-primary-400 text-neutral-50 rounded-lg cursor-pointer"
+              >
+                Contactanos
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6 inline">
+                  <path fill-rule="evenodd" d="M16.28 11.47a.75.75 0 0 1 0 1.06l-7.5 7.5a.75.75 0 0 1-1.06-1.06L14.69 12 7.72 5.03a.75.75 0 0 1 1.06-1.06l7.5 7.5Z" clip-rule="evenodd" />
+                </svg>
+              </button>
+            </a>
+          </div>
+        </div>
+        <div class="hidden lg:block col-span-1">
+          <img src={designerLife.src} alt="Hero Image" class="w-96 ml-auto" />
+        </div>
+      </div>
+    </Container>
+  </Header>
 </Layout>
