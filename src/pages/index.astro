@@ -1,39 +1,211 @@
 ---
-import Header from "../components/Header.astro";
-import Layout from "../layouts/Layout.astro";
-import designerLife from "../assets/illustrations/designer-life.svg";
-import Container from "../components/Container.astro";
+import Layout from "~/layouts/Layout.astro";
+import Container from "~/components/Container.astro";
+import FeatureCard from "~/components/FeatureCard.astro";
+import hello from "~/assets/illustrations/hello.svg";
+import background from "~/assets/background.png";
 ---
 
-<Layout>
-  <Header>
+<Layout title="Munyaal">
+  <!-- Header -->
+  <section
+    class="pt-16 pb-24 bg-cover bg-center"
+    style={{ backgroundImage: `url(${background.src})` }}
+  >
     <Container>
-      <div class="grid grid-cols-2 gap-4">
-        <div class="col-span-2 lg:col-span-1">
-          <div class="space-y-4">
-            <h1 class="text-6xl font-bold">Transformamos tu Negocio</h1>
-
-            <p class="text-lg">
+      <header class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div class="col-span-2 md:col-span-1 flex items-center">
+          <div class="space-y-6">
+            <h1 class="text-4xl md:text-6xl font-medium">
+              Transformamos tu Negocio
+            </h1>
+            <p class="text-base md:text-lg">
               Impulsa el crecimiento de tu negocio con nuestras soluciones de
-              software innovadoras.
+              software innovadoras y a la medida.
             </p>
-
-            <a href="/contact">
-              <button
-                class="p-5 bg-primary-400 text-neutral-50 rounded-lg cursor-pointer"
+            <button
+              class="bg-primary text-white hover:opacity-90 px-5 py-2.5 rounded-lg flex gap-1 cursor-pointer"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                class="size-6"
               >
-                Contactanos
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6 inline">
-                  <path fill-rule="evenodd" d="M16.28 11.47a.75.75 0 0 1 0 1.06l-7.5 7.5a.75.75 0 0 1-1.06-1.06L14.69 12 7.72 5.03a.75.75 0 0 1 1.06-1.06l7.5 7.5Z" clip-rule="evenodd" />
-                </svg>
-              </button>
-            </a>
+                <path
+                  d="M10.5 18.75a.75.75 0 0 0 0 1.5h3a.75.75 0 0 0 0-1.5h-3Z"
+                ></path>
+                <path
+                  fill-rule="evenodd"
+                  d="M8.625.75A3.375 3.375 0 0 0 5.25 4.125v15.75a3.375 3.375 0 0 0 3.375 3.375h6.75a3.375 3.375 0 0 0 3.375-3.375V4.125A3.375 3.375 0 0 0 15.375.75h-6.75ZM7.5 4.125C7.5 3.504 8.004 3 8.625 3H9.75v.375c0 .621.504 1.125 1.125 1.125h2.25c.621 0 1.125-.504 1.125-1.125V3h1.125c.621 0 1.125.504 1.125 1.125v15.75c0 .621-.504 1.125-1.125 1.125h-6.75A1.125 1.125 0 0 1 7.5 19.875V4.125Z"
+                  clip-rule="evenodd"></path>
+              </svg>
+              <span>Contactanos</span>
+            </button>
           </div>
         </div>
-        <div class="hidden lg:block col-span-1">
-          <img src={designerLife.src} alt="Hero Image" class="w-96 ml-auto" />
+        <div class="hidden md:block">
+          <img src={hello.src} alt="Hello Illustration" class="w-full my-16" />
         </div>
+      </header>
+    </Container>
+  </section>
+  <!-- Features -->
+  <section class="py-16">
+    <Container>
+      <section>
+        <h2 class="text-2xl md:text-4xl font-medium text-center mb-16">
+          Software a la medida
+        </h2>
+
+        <div
+          class="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12 lg:gap-14"
+        >
+          <!-- Personalización Total -->
+          <FeatureCard>
+            <Fragment slot="icon">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                class="size-6"
+              >
+                <path
+                  d="M18.75 12.75h1.5a.75.75 0 0 0 0-1.5h-1.5a.75.75 0 0 0 0 1.5ZM12 6a.75.75 0 0 1 .75-.75h7.5a.75.75 0 0 1 0 1.5h-7.5A.75.75 0 0 1 12 6ZM12 18a.75.75 0 0 1 .75-.75h7.5a.75.75 0 0 1 0 1.5h-7.5A.75.75 0 0 1 12 18ZM3.75 6.75h1.5a.75.75 0 1 0 0-1.5h-1.5a.75.75 0 0 0 0 1.5ZM5.25 18.75h-1.5a.75.75 0 0 1 0-1.5h1.5a.75.75 0 0 1 0 1.5ZM3 12a.75.75 0 0 1 .75-.75h7.5a.75.75 0 0 1 0 1.5h-7.5A.75.75 0 0 1 3 12ZM9 3.75a2.25 2.25 0 1 0 0 4.5 2.25 2.25 0 0 0 0-4.5ZM12.75 12a2.25 2.25 0 1 1 4.5 0 2.25 2.25 0 0 1-4.5 0ZM9 15.75a2.25 2.25 0 1 0 0 4.5 2.25 2.25 0 0 0 0-4.5Z"
+                ></path>
+              </svg>
+            </Fragment>
+            <Fragment slot="title">Personalización Total</Fragment>
+            <Fragment slot="content">
+              Se adapta completamente a los procesos únicos de tu empresa,
+              asegurando funcionalidades específicas y eficientes para tu
+              negocio.
+            </Fragment>
+          </FeatureCard>
+          <!-- Escalabilidad -->
+          <FeatureCard>
+            <Fragment slot="icon">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                class="size-6"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M15.22 6.268a.75.75 0 0 1 .968-.431l5.942 2.28a.75.75 0 0 1 .431.97l-2.28 5.94a.75.75 0 1 1-1.4-.537l1.63-4.251-1.086.484a11.2 11.2 0 0 0-5.45 5.173.75.75 0 0 1-1.199.19L9 12.312l-6.22 6.22a.75.75 0 0 1-1.06-1.061l6.75-6.75a.75.75 0 0 1 1.06 0l3.606 3.606a12.695 12.695 0 0 1 5.68-4.974l1.086-.483-4.251-1.632a.75.75 0 0 1-.432-.97Z"
+                  clip-rule="evenodd"></path>
+              </svg>
+            </Fragment>
+            <Fragment slot="title">Escalabilidad</Fragment>
+            <Fragment slot="content">
+              Crece y evoluciona junto a las necesidades de tu empresa,
+              permitiendo agregar nuevas características e integraciones
+              fácilmente.
+            </Fragment>
+          </FeatureCard>
+          <!-- Mayor Eficiencia -->
+          <FeatureCard>
+            <Fragment slot="icon">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                class="size-6"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M11.078 2.25c-.917 0-1.699.663-1.85 1.567L9.05 4.889c-.02.12-.115.26-.297.348a7.493 7.493 0 0 0-.986.57c-.166.115-.334.126-.45.083L6.3 5.508a1.875 1.875 0 0 0-2.282.819l-.922 1.597a1.875 1.875 0 0 0 .432 2.385l.84.692c.095.078.17.229.154.43a7.598 7.598 0 0 0 0 1.139c.015.2-.059.352-.153.43l-.841.692a1.875 1.875 0 0 0-.432 2.385l.922 1.597a1.875 1.875 0 0 0 2.282.818l1.019-.382c.115-.043.283-.031.45.082.312.214.641.405.985.57.182.088.277.228.297.35l.178 1.071c.151.904.933 1.567 1.85 1.567h1.844c.916 0 1.699-.663 1.85-1.567l.178-1.072c.02-.12.114-.26.297-.349.344-.165.673-.356.985-.57.167-.114.335-.125.45-.082l1.02.382a1.875 1.875 0 0 0 2.28-.819l.923-1.597a1.875 1.875 0 0 0-.432-2.385l-.84-.692c-.095-.078-.17-.229-.154-.43a7.614 7.614 0 0 0 0-1.139c-.016-.2.059-.352.153-.43l.84-.692c.708-.582.891-1.59.433-2.385l-.922-1.597a1.875 1.875 0 0 0-2.282-.818l-1.02.382c-.114.043-.282.031-.449-.083a7.49 7.49 0 0 0-.985-.57c-.183-.087-.277-.227-.297-.348l-.179-1.072a1.875 1.875 0 0 0-1.85-1.567h-1.843ZM12 15.75a3.75 3.75 0 1 0 0-7.5 3.75 3.75 0 0 0 0 7.5Z"
+                  clip-rule="evenodd"></path>
+              </svg>
+            </Fragment>
+            <Fragment slot="title">Mayor Eficiencia</Fragment>
+            <Fragment slot="content">
+              Optimiza tareas y recursos, automatizando procesos clave que
+              mejoran el rendimiento y productividad de tu equipo de trabajo.
+            </Fragment>
+          </FeatureCard>
+          <!-- Integración Perfecta -->
+          <FeatureCard>
+            <Fragment slot="icon">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                class="size-6"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M19.902 4.098a3.75 3.75 0 0 0-5.304 0l-4.5 4.5a3.75 3.75 0 0 0 1.035 6.037.75.75 0 0 1-.646 1.353 5.25 5.25 0 0 1-1.449-8.45l4.5-4.5a5.25 5.25 0 1 1 7.424 7.424l-1.757 1.757a.75.75 0 1 1-1.06-1.06l1.757-1.757a3.75 3.75 0 0 0 0-5.304Zm-7.389 4.267a.75.75 0 0 1 1-.353 5.25 5.25 0 0 1 1.449 8.45l-4.5 4.5a5.25 5.25 0 1 1-7.424-7.424l1.757-1.757a.75.75 0 1 1 1.06 1.06l-1.757 1.757a3.75 3.75 0 1 0 5.304 5.304l4.5-4.5a3.75 3.75 0 0 0-1.035-6.037.75.75 0 0 1-.354-1Z"
+                  clip-rule="evenodd"></path>
+              </svg>
+            </Fragment>
+            <Fragment slot="title">Integración Perfecta</Fragment>
+            <Fragment slot="content">
+              Se conecta sin problemas con sistemas existentes, como ERPs o
+              CRMs, para un flujo de trabajo eficiente y sin interrupciones.
+            </Fragment>
+          </FeatureCard>
+          <!-- Seguridad Mejorada -->
+          <FeatureCard>
+            <Fragment slot="icon">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                class="size-6"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M12 1.5a5.25 5.25 0 0 0-5.25 5.25v3a3 3 0 0 0-3 3v6.75a3 3 0 0 0 3 3h10.5a3 3 0 0 0 3-3v-6.75a3 3 0 0 0-3-3v-3c0-2.9-2.35-5.25-5.25-5.25Zm3.75 8.25v-3a3.75 3.75 0 1 0-7.5 0v3h7.5Z"
+                  clip-rule="evenodd"></path>
+              </svg>
+            </Fragment>
+            <Fragment slot="title">Seguridad Mejorada</Fragment>
+            <Fragment slot="content">
+              Proporciona altos estándares de seguridad, diseñados
+              específicamente para proteger tus datos empresariales frente a
+              vulnerabilidades externas.
+            </Fragment>
+          </FeatureCard>
+          <!-- Retorno de Inversión (ROI) -->
+          <FeatureCard>
+            <Fragment slot="icon">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                class="size-6"
+              >
+                <path
+                  d="M10.464 8.746c.227-.18.497-.311.786-.394v2.795a2.252 2.252 0 0 1-.786-.393c-.394-.313-.546-.681-.546-1.004 0-.323.152-.691.546-1.004ZM12.75 15.662v-2.824c.347.085.664.228.921.421.427.32.579.686.579.991 0 .305-.152.671-.579.991a2.534 2.534 0 0 1-.921.42Z"
+                ></path>
+                <path
+                  fill-rule="evenodd"
+                  d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25ZM12.75 6a.75.75 0 0 0-1.5 0v.816a3.836 3.836 0 0 0-1.72.756c-.712.566-1.112 1.35-1.112 2.178 0 .829.4 1.612 1.113 2.178.502.4 1.102.647 1.719.756v2.978a2.536 2.536 0 0 1-.921-.421l-.879-.66a.75.75 0 0 0-.9 1.2l.879.66c.533.4 1.169.645 1.821.75V18a.75.75 0 0 0 1.5 0v-.81a4.124 4.124 0 0 0 1.821-.749c.745-.559 1.179-1.344 1.179-2.191 0-.847-.434-1.632-1.179-2.191a4.122 4.122 0 0 0-1.821-.75V8.354c.29.082.559.213.786.393l.415.33a.75.75 0 0 0 .933-1.175l-.415-.33a3.836 3.836 0 0 0-1.719-.755V6Z"
+                  clip-rule="evenodd"></path>
+              </svg>
+            </Fragment>
+            <Fragment slot="title">Retorno de Inversión (ROI)</Fragment>
+            <Fragment slot="content">
+              Elimina costos recurrentes de licencias genéricas y maximiza los
+              beneficios al contar con un software eficiente y personalizado.
+            </Fragment>
+          </FeatureCard>
+        </div>
+      </section>
+    </Container>
+  </section>
+  <!-- Products -->
+  <section class="py-16">
+    <Container>
+      <h2 class="text-2xl md:text-4xl font-medium text-center mb-16">
+        Productos comerciales
+      </h2>
+
+      <div class="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12 lg:gap-14">
+        
       </div>
     </Container>
-  </Header>
+  </section>
 </Layout>
