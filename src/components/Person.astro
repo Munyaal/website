@@ -1,0 +1,27 @@
+---
+type Props = {
+  name: string;
+  role: string;
+  picture: string;
+};
+
+const { name, role, picture } = Astro.props;
+---
+
+<div>
+  <div class="w-full aspect-square">
+    <img
+      src={picture}
+      alt={name}
+      class="w-full rounded-md rounded transition group-hover:-translate-y-1 group-hover:shadow-xl bg-white object-cover object-center aspect-square"
+    />
+  </div>
+  <div class="mt-4 text-center">
+    <h3 class="text-lg text-neutral-800">
+      {name}
+    </h3>
+    <p class="text-sm text-neutral-500">
+      {role}
+    </p>
+  </div>
+</div>

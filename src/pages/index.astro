@@ -4,12 +4,14 @@ import Container from "~/components/Container.astro";
 import FeatureCard from "~/components/FeatureCard.astro";
 import hello from "~/assets/illustrations/hello.svg";
 import background from "~/assets/background.png";
+import ilogs from "~/assets/logos/ilogs.svg";
+import luums from "~/assets/logos/luums.svg";
 ---
 
 <Layout title="Munyaal">
   <!-- Header -->
   <section
-    class="pt-16 pb-24 bg-cover bg-center"
+    class="pt-16 pb-24 bg-cover bg-center bg-no-repeat"
     style={{ backgroundImage: `url(${background.src})` }}
   >
     <Container>
@@ -203,8 +205,15 @@ import background from "~/assets/background.png";
         Productos comerciales
       </h2>
 
-      <div class="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12 lg:gap-14">
-        
+      <div
+        class="flex flex-col md:flex-row justify-around items-center gap-12 md:gap-0"
+      >
+        <a href="/ilogs">
+          <img src={ilogs.src} alt="iLogs" loading="lazy" class="h-14" />
+        </a>
+        <a href="/luums">
+          <img src={luums.src} alt="luums" loading="lazy" class="h-11" />
+        </a>
       </div>
     </Container>
   </section>
