@@ -1,0 +1,64 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app.kubernetes.io/name: munyaal-web
+    app.kubernetes.io/version: "2.4.63"
+  name: munyaal-web
+  namespace: munyaal
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: munyaal-web
+  strategy:
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: munyaal-web
+        app.kubernetes.io/version: "2.4.63"
+    spec:
+      containers:
+        - image: httpd:2.4.63-alpine3.21
+          name: httpd
+          ports:
+            - containerPort: 80
+          resources: {}
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app.kubernetes.io/name: munyaal-web
+  name: munyaal-web
+  namespace: munyaal
+spec:
+  ports:
+    - name: http
+      port: 80
+      protocol: TCP
+      targetPort: 80
+  selector:
+    app.kubernetes.io/name: munyaal-web
+  type: ClusterIP
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: munyaal-web
+  namespace: munyaal
+spec:
+  rules:
+    - host: munyaal.com.mx
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: munyaal-web
+                port:
+                  number: 80
+---
