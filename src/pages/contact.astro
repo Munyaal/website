@@ -16,7 +16,7 @@ import background from "~/assets/background.png";
       </p>
     </header>
 
-    <section class="mx-auto max-w-4xl py-10 px-4">
+    <section class="mx-auto max-w-4xl pt-10 pb-20 px-4">
       <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
         <div class="space-y-4">
           <h2 class="text-2xl md:text-4xl font-medium">Habla con nosotros</h2>
@@ -99,7 +99,7 @@ import background from "~/assets/background.png";
           </ul>
         </div>
         <div>
-          <form class="flex flex-col gap-4">
+          <form class="flex flex-col gap-4" id="contact-form">
             <input
               type="text"
               id="name"
@@ -116,17 +116,10 @@ import background from "~/assets/background.png";
               placeholder="Correo electrónico"
               class="px-4 py-2 rounded border border-neutral-600 focus:border-primary-600 focus:outline-primary bg-white"
             />
-            <input
-              type="tel"
-              id="phone"
-              name="phone"
-              required
-              placeholder="Número de teléfono"
-              class="px-4 py-2 rounded border border-neutral-600 focus:border-primary-600 focus:outline-primary bg-white"
-            />
             <textarea
               name="message"
               id="message"
+              required
               placeholder="Mensaje"
               class="px-4 py-2 rounded border border-neutral-600 focus:border-primary-600 focus:outline-primary bg-white h-24"
             ></textarea>
@@ -134,9 +127,20 @@ import background from "~/assets/background.png";
             <button
               class="bg-primary text-white hover:opacity-90 px-5 py-2.5 rounded-lg flex justify-center gap-1 cursor-pointer"
             >
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M6 12 3.269 3.125A59.769 59.769 0 0 1 21.485 12 59.768 59.768 0 0 1 3.27 20.875L5.999 12Zm0 0h7.5" />
-              </svg>            
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="size-6"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M6 12 3.269 3.125A59.769 59.769 0 0 1 21.485 12 59.768 59.768 0 0 1 3.27 20.875L5.999 12Zm0 0h7.5"
+                ></path>
+              </svg>
               <span>Enviar mensaje</span>
             </button>
           </form>
@@ -145,3 +149,24 @@ import background from "~/assets/background.png";
     </section>
   </div>
 </Layout>
+
+<script>
+  import { apiWhatsApp, munyaalPhone } from "~/utils/contants";
+
+  const $ = (selector: string) => document.querySelector(selector);
+
+  const contactForm = $("#contact-form");
+
+  contactForm?.addEventListener("submit", async (event) => {
+    event.preventDefault();
+
+    const formData = new FormData(contactForm as HTMLFormElement);
+
+    const name = formData.get("name");
+    const email = formData.get("email");
+    const message = formData.get("message");
+
+    const url = `${apiWhatsApp}?phone=${munyaalPhone}&text=Hola, soy *${name}* (${email}) y me gustaría decirte que: ${message}`;
+    window.open(url, "_blank");
+  });
+</script>

@@ -1,4 +1,6 @@
 ---
+import { Image } from "astro:assets";
+
 type Props = {
   name: string;
   role: string;
@@ -11,8 +13,8 @@ const { name, role, picture } = Astro.props;
 <div>
   <div class="w-full aspect-square">
     <img
-      src={picture}
       alt={name}
+      src={picture}
       class="w-full rounded transition group-hover:-translate-y-1 group-hover:shadow-xl bg-white object-cover object-center aspect-square"
     />
   </div>
