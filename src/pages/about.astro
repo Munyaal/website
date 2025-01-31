@@ -1,6 +1,9 @@
 ---
 import Layout from "~/layouts/Layout.astro";
 import Person from "~/components/Person.astro";
+import alex from "~/assets/team/alex.png";
+import caleb from "~/assets/team/caleb.png";
+import leonardo from "~/assets/team/leonardo.png";
 ---
 
 <Layout>
@@ -29,17 +32,17 @@ import Person from "~/components/Person.astro";
         <Person
           name="Alex Pech"
           role="Desarrollador Full Stack"
-          picture="https://images.unsplash.com/photo-1580489944761-15a19d654956?&fit=crop&w=280"
+          picture={alex.src}
         />
         <Person
           name="Caleb Mora"
           role="Project Manager"
-          picture="https://images.unsplash.com/photo-1633332755192-727a05c4013d?&fit=crop&w=280"
+          picture={caleb.src}
         />
         <Person
           name="Leonardo Alvarez"
           role="Desarrollador Full Stack"
-          picture="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?&fit=crop&w=280"
+          picture={leonardo.src}
         />
       </div>
     </section>

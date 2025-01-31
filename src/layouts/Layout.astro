@@ -3,6 +3,8 @@ import "../styles/global.css";
 import Navbar from "~/components/Navbar.astro";
 import Footer from "~/components/Footer.astro";
 import background from "~/assets/background.png";
+import BasicMetadata from "~/components/BasicMetadata.astro";
+import OpenGraphMetadata from "~/components/OpenGraphMetadata.astro";
 
 type Props = {
   title?: string;
@@ -14,8 +16,9 @@ const { title = "Munyaal" } = Astro.props;
 <!doctype html>
 <html lang="es" dir="ltr">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Metadata básica -->
+    <BasicMetadata />
+    <OpenGraphMetadata />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>

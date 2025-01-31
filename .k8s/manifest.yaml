@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   labels:
     app.kubernetes.io/name: munyaal-web
-    app.kubernetes.io/version: "2.4.63"
+    app.kubernetes.io/version: "1.0.0"
   name: munyaal-web
   namespace: munyaal
 spec:
@@ -17,13 +17,13 @@ spec:
     metadata:
       labels:
         app.kubernetes.io/name: munyaal-web
-        app.kubernetes.io/version: "2.4.63"
+        app.kubernetes.io/version: "1.0.0"
     spec:
       containers:
-        - image: httpd:2.4.63-alpine3.21
-          name: httpd
+        - image: registry.digitalocean.com/munyaal-docr/munyaal/website:1.0.0
+          name: munyaal-web
           ports:
-            - containerPort: 80
+            - containerPort: 8080
           resources: {}
 
 ---
@@ -39,7 +39,7 @@ spec:
     - name: http
       port: 80
       protocol: TCP
-      targetPort: 80
+      targetPort: 8080
   selector:
     app.kubernetes.io/name: munyaal-web
   type: ClusterIP
@@ -50,6 +50,7 @@ metadata:
   name: munyaal-web
   namespace: munyaal
 spec:
+  ingressClassName: nginx
   rules:
     - host: munyaal.com.mx
       http:
@@ -61,4 +62,7 @@ spec:
                 name: munyaal-web
                 port:
                   number: 80
----
+  tls:
+    - hosts:
+        - munyaal.com.mx
+      secretName: munyaal-com-mx-tls
