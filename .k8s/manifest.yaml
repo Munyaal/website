@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   labels:
     app.kubernetes.io/name: munyaal-web
-    app.kubernetes.io/version: "1.0.0"
+    app.kubernetes.io/version: <VERSION>
   name: munyaal-web
   namespace: munyaal
 spec:
@@ -17,10 +17,10 @@ spec:
     metadata:
       labels:
         app.kubernetes.io/name: munyaal-web
-        app.kubernetes.io/version: "1.0.0"
+        app.kubernetes.io/version: <VERSION>
     spec:
       containers:
-        - image: registry.digitalocean.com/munyaal-docr/munyaal/website:1.0.0
+        - image: <IMAGE>
           name: munyaal-web
           ports:
             - containerPort: 8080
