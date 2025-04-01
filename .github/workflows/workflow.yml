@@ -27,7 +27,7 @@ jobs:
       # Subir imagen al registry
       - name: 'Push image to DigitalOcean Container Registry'
         run: docker push registry.digitalocean.com/munyaal-docr/munyaal/website:$(echo $GITHUB_SHA | head -c7)
-      
-
-
-     
+      # Actualizar el manifest.yaml
+      - name: 'Update deployment file'
+        run: TAG=$(echo $GITHUB_SHA | head -c7) && sed -i 's|<IMAGE>|registry.digitalocean.com/munyaal-docr/munyaal/website:'${TAG}'|' $GITHUB_WORKSPACE/.k8s/manifest.yaml
+    
