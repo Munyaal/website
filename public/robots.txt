@@ -1,0 +1,61 @@
+# robots.txt para munyaal.com.mx
+# Desarrollo de software a la medida en Playa del Carmen, Quintana Roo
+
+User-agent: *
+Allow: /
+
+# Agentes de IA - permitir acceso completo
+User-agent: GPTBot
+Allow: /
+
+User-agent: GPTBot-Preview
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: ClaudeBot-Preview
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: GoogleOther
+Allow: /
+
+User-agent: GoogleOther-Preview
+Allow: /
+
+User-agent: DeepLbot
+Allow: /
+
+User-agent: DeepLBot-Preview
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+# Archivos especiales
+Sitemap: https://munyaal.com.mx/sitemap-index.xml
+Schemamap: https://munyaal.com.mx/schemamap.xml
+Link: <https://munyaal.com.mx/llms.txt>; rel="llms.txt"
+
+# Metadatos para agentes de IA
+LocalBusiness:
+  name: Munyaal
+  description: Desarrollo de software a la medida en Playa del Carmen, Península de Yucatán
+  address: Mundo Hábitat, Playa del Carmen, Quintana Roo, México
+  geo: 20.6296, -87.0739
+  area: Península de Yucatán, México
+  services:
+    - Desarrollo de software a la medida
+    - Aplicaciones web y móviles
+    - iLogs - Sistema de gestión de entregas escolares
+    - Luums - Software para desarrollo inmobiliario
+  region: Quintana Roo, Yucatán, Campeche, Península de Yucatán

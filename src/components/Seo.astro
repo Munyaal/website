@@ -1,0 +1,57 @@
+---
+import Seo from "@jdevalk/astro-seo-graph/Seo.astro";
+
+type Props = {
+  title?: string;
+  description?: string;
+  image?: string;
+  noindex?: boolean;
+};
+
+const { title, description, image, noindex } = Astro.props;
+
+const defaultTitle = "Munyaal - Desarrollo de Software a la Medida";
+const defaultDescription = "Desarrollo de software a la medida en Playa del Carmen, Quintana Roo, Península de Yucatán. Expertos en soluciones digitales para negocios. iLogs, Luums y aplicaciones personalizadas.";
+const defaultImage = "/og-default.png";
+
+const pageTitle = title ? `${title} | Munyaal` : defaultTitle;
+---
+
+<Seo
+  title={pageTitle}
+  description={description || defaultDescription}
+  canonicalUrl={Astro.url.href}
+  noindex={noindex}
+  og={{
+    title: pageTitle,
+    description: description || defaultDescription,
+    image: image || defaultImage,
+    type: "website",
+    locale: "es_MX",
+  }}
+  twitter={{
+    card: "summary_large_image",
+    title: pageTitle,
+    description: description || defaultDescription,
+    image: image || defaultImage,
+  }}
+  robots={{
+    maxSnippet: -1,
+    maxImagePreview: "large",
+    maxVideoPreview: -1,
+  }}
+/>
+
+<meta name="author" content="Munyaal" />
+<meta name="geo.region" content="MX-QR" />
+<meta name="geo.placename" content="Playa del Carmen" />
+<meta name="geo.position" content="20.6296;-87.0739" />
+<meta name="ICBM" content="20.6296, -87.0739" />
+
+<meta name="keywords" content="desarrollo de software, software a la medida, aplicaciones web, Playa del Carmen, Quintana Roo, Península de Yucatán, desarrollo inmobiliario, gestión escolar, SaaS, México" />
+
+<link rel="alternate" hreflang="es-MX" href={Astro.url.href} />
+<link rel="alternate" hreflang="es" href={Astro.url.href} />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />

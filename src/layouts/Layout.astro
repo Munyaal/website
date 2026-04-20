@@ -2,24 +2,69 @@
 import "../styles/global.css";
 import Navbar from "~/components/Navbar.astro";
 import Footer from "~/components/Footer.astro";
-import BasicMetadata from "~/components/BasicMetadata.astro";
-import OpenGraphMetadata from "~/components/OpenGraphMetadata.astro";
+import Seo from "~/components/Seo.astro";
 
 type Props = {
   title?: string;
+  description?: string;
+  image?: string;
+  noindex?: boolean;
 };
 
-const { title = "Munyaal" } = Astro.props;
+const { title, description, image, noindex } = Astro.props;
 ---
 
 <!doctype html>
 <html lang="es" dir="ltr">
   <head>
-    <BasicMetadata />
-    <OpenGraphMetadata />
+    <Seo 
+      title={title} 
+      description={description} 
+      image={image} 
+      noindex={noindex} 
+    />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
-    <title>{title}</title>
+    
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Munyaal",
+        "description": "Desarrollo de software a la medida en Playa del Carmen, Quintana Roo.",
+        "url": "https://munyaal.com.mx",
+        "logo": "https://munyaal.com.mx/logo.svg",
+        "telephone": "+529841309862",
+        "email": "developers@munyaal.app",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Mundo Hábitat",
+          "addressLocality": "Playa del Carmen",
+          "addressRegion": "Quintana Roo",
+          "postalCode": "77714",
+          "addressCountry": "MX"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": "20.6296",
+          "longitude": "-87.0739"
+        },
+        "areaServed": {
+          "@type": "State",
+          "name": "Quintana Roo"
+        },
+        "priceRange": "$$",
+        "openingHoursSpecification": {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          "opens": "09:00",
+          "closes": "18:00"
+        },
+        "sameAs": [
+          "https://www.facebook.com/profile.php?id=100064030270572"
+        ]
+      }
+    </script>
   </head>
   <body class="min-h-screen flex flex-col">
     <Navbar />

@@ -1,0 +1,63 @@
+# Munyaal - Desarrollo de Software a la Medida
+
+## Información General
+
+**Nombre:** Munyaal
+**Descripción:** Empresa de desarrollo de software a la medida ubicada en Playa del Carmen, Quintana Roo, México. Especialistas en crear soluciones digitales personalizadas para negocios.
+**Sitio web:** https://munyaal.com.mx
+**Email:** developers@munyaal.app
+**Teléfono:** +52 984 130 9862
+**Ubicación:** Mundo Hábitat, Playa del Carmen, Quintana Roo, México
+**Región:** Península de Yucatán (Quintana Roo, Yucatán, Campeche)
+**Año de fundación:** 2018
+
+## Servicios
+
+- Desarrollo de software a la medida
+- Aplicaciones web personalizadas
+- Aplicaciones móviles
+- Software para industrias específicas
+- Soluciones de software para empresas
+
+## Productos
+
+### iLogs - Sistema de Gestión de Entregas Escolares
+**URL:** https://munyaal.com.mx/ilogs
+**Tipo:** SaaS (Software as a Service)
+**Descripción:** Sistema de gestión de entregas escolares para escuelas privadas. Permite registrar entregas de tareas, proyectos y materiales, enviando notificaciones automáticas a los tutores. Incluye módulos de eventos escolares y avisos institucionales.
+**Características:**
+- Registro de entregas escolares
+- Notificaciones automáticas a tutores
+- Módulo de eventos escolares
+- Módulo de avisos institucionales
+- Gestión de alumnos por grupo y grado
+- Reportes y estadísticas
+
+### Luums - Software para Desarrollo Inmobiliario
+**URL:** https://munyaal.com.mx/luums
+**Tipo:** On-Premise
+**Descripción:** Software especializado para empresas de desarrollo inmobiliario. Permite crear cotizaciones con tablas de amortización, enviar cotizaciones por correo electrónico y controlar pagos de clientes.
+**Características:**
+- Gestión de clientes
+- Cotizaciones con tablas de amortización
+- Envío de cotizaciones por correo electrónico
+- Control de pagos de clientes
+- Inventario de propiedades
+- Reportes comerciales
+
+## Equipo
+
+**Alex Pech** - Desarrollador Full Stack
+**Caleb Mora** - Project Manager  
+**Leonardo Alvarez** - Desarrollador Full Stack
+
+## Tecnologías
+
+- Desarrollo web personalizado
+- AplicacionesSaaS
+- Software on-premise
+- Soluciones empresariales
+
+## Palabras Clave
+
+desarrollo de software, software a la medida, aplicaciones web, aplicaciones móviles, Playa del Carmen, Quintana Roo, Península de Yucatán, desarrollo inmobiliario, gestión escolar, SaaS, México, empresas de software en Quintana Roo
