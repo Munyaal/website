@@ -2,16 +2,22 @@
 type Props = {
   path: string;
   title: string;
+  active?: boolean;
+  mobile?: boolean;
 };
 
-const { path, title } = Astro.props;
+const { path, title, active = false, mobile = false } = Astro.props;
 ---
 
 <li>
   <a
     href={path}
-    class={"flex py-2 px-3 md:p-0 items-center rounded hover:bg-neutral-200 md:hover:bg-transparent text-neutral-700 hover:text-neutral-950 text-base md:text-lg"}
+    class:list={[
+      "text-base font-medium transition-all duration-300",
+      mobile ? "block py-3 px-4 rounded-lg hover:bg-sand-dark/50" : "hover:text-primary",
+      active ? "text-primary" : "text-deep-blue",
+    ]}
   >
-    <span> {title} </span>
+    {title}
   </a>
 </li>
