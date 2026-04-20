@@ -1,12 +1,161 @@
 ---
 import Layout from "~/layouts/Layout.astro";
+import Container from "~/components/Container.astro";
+import FeatureCard from "~/components/FeatureCard.astro";
+import ilogsLogo from "~/assets/logos/ilogs.svg";
 ---
 
-<Layout title="iLogs">
-  <p>
-    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officia, nisi!
-    Pariatur quas recusandae quisquam! Nisi aperiam eius ad molestiae nam
-    consectetur temporibus eaque inventore, molestias numquam laudantium libero
-    voluptatibus quam?
-  </p>
+<Layout title="iLogs - Gestión de Entregas Escolares">
+  <section class="relative pt-24 pb-20 bg-maya-pattern overflow-hidden">
+    <div class="absolute inset-0 overflow-hidden">
+      <div class="absolute -top-40 -right-40 w-80 h-80 bg-maya-blue/10 rounded-full blur-3xl"></div>
+      <div class="absolute -bottom-20 -left-20 w-60 h-60 bg-jade/10 rounded-full blur-3xl"></div>
+    </div>
+    
+    <Container>
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div class="space-y-6">
+          <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-maya-blue/10 text-maya-blue-dark text-sm font-medium">
+            <span class="w-2 h-2 rounded-full bg-maya-blue"></span>
+            Solución SaaS
+          </div>
+          
+          <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold font-display">
+            <span class="text-gradient">iLogs</span>
+          </h1>
+          
+          <p class="text-xl text-deep-blue/70 leading-relaxed">
+            Sistema de gestión de entregas escolares. Registra las entregas de tareas, proyectos y materiales, y notifica automáticamente a los tutores para que estén informados en tiempo real.
+          </p>
+          
+          <div class="flex flex-wrap gap-4 pt-4">
+            <a href="/contact" class="btn-primary">
+              Solicitar Demo
+            </a>
+            <a href="#caracteristicas" class="btn-secondary">
+              Ver características
+            </a>
+          </div>
+        </div>
+
+        <div class="relative">
+          <div class="absolute inset-0 bg-gradient-to-br from-maya-blue/20 via-jade/15 to-oro/10 rounded-3xl blur-3xl"></div>
+          <div class="relative bg-white/90 backdrop-blur-xl rounded-2xl shadow-2xl p-8 border border-white/50">
+            <div class="flex items-center justify-center">
+              <img src={ilogsLogo.src} alt="iLogs" class="h-20" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </Container>
+  </section>
+
+  <section id="caracteristicas" class="section-padding bg-white relative">
+    <Container>
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl lg:text-5xl mb-6 font-display">
+          Características principales
+        </h2>
+        <p class="text-lg text-deep-blue/60 max-w-2xl mx-auto">
+          Todo lo que necesitas para gestionar entregas escolares eficientemente
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <FeatureCard delay="100">
+          <Fragment slot="icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
+              <path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm13.36-1.814a.75.75 0 1 0-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.14-.094l3.75-5.25Z" clip-rule="evenodd" />
+            </svg>
+          </Fragment>
+          <Fragment slot="title">Registro de Entregas</Fragment>
+          <Fragment slot="content">
+            Registra cada entrega realizada por los alumnos con fecha, descripción y evidencia digital. Historial completo y trazabilidad.
+          </Fragment>
+        </FeatureCard>
+
+        <FeatureCard delay="200">
+          <Fragment slot="icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
+              <path fill-rule="evenodd" d="M9 4.5a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-1.5 0v-1.5A.75.75 0 0 1 9 4.5Zm-6.75.75a.75.75 0 0 1 .75.75v6.75h6.75a.75.75 0 0 1 0 1.5H3.75A.75.75 0 0 1 3 12.75v-7.5a.75.75 0 0 1 .75-.75Zm13.5.75a.75.75 0 0 1 .75.75v6.75h6.75a.75.75 0 0 1 0 1.5H16.5v-8.25a.75.75 0 0 1 .75-.75Z" clip-rule="evenodd" />
+            </svg>
+          </Fragment>
+          <Fragment slot="title">Notificaciones a Tutores</Fragment>
+          <Fragment slot="content">
+            Cuando se registra una entrega, los tutores reciben una notificación inmediata para mantenerse informados del progreso de sus hijos.
+          </Fragment>
+        </FeatureCard>
+
+        <FeatureCard delay="300">
+          <Fragment slot="icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
+              <path fill-rule="evenodd" d="M6 4.5v2.25a.75.75 0 0 0 1.5 0V4.5h12v2.25a.75.75 0 0 0 1.5 0V4.5h-15ZM5.25 9.75v5.25a.75.75 0 0 0 .75.75h12a.75.75 0 0 0 .75-.75V9.75H5.25Zm-.75 3h13.5v2.25a.75.75 0 0 1-.75.75H5.25a.75.75 0 0 1-.75-.75V12.75Z" clip-rule="evenodd" />
+              <path d="M9 15.75a.75.75 0 0 1 .75-.75h4.5a.75.75 0 0 1 0 1.5h-4.5a.75.75 0 0 1-.75-.75Z" />
+            </svg>
+          </Fragment>
+          <Fragment slot="title">Módulo de Eventos</Fragment>
+          <Fragment slot="content">
+            Organiza eventos escolares como ceremonias, jornadas deportivas, ferias y reuniones. Calendario integrado con recordatorios.
+          </Fragment>
+        </FeatureCard>
+
+        <FeatureCard delay="400">
+          <Fragment slot="icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
+              <path fill-rule="evenodd" d="M4.5 9.75a6 6 0 0 1 11.573-2.226 3.75 3.75 0 0 14.133 3.05 4.5 4.5 0 0 1-2.622 6.225H5.75A2.25 2.25 0 0 1 3.5 13.5V9.75ZM12.727 12.727c0 .828-.448 1.5-1.227 1.5H11.25v2.75a.75.75 0 0 0 1.5 0v-2.75h.25c.779 0 1.227-.672 1.227-1.5a2.25 2.25 0 0 0-2.25-2.25h-1.5ZM8.25 10.5a.75.75 0 0 1 .75-.75h6a.75.75 0 0 1 0 1.5h-6a.75.75 0 0 1-.75-.75Zm.75 2.25a.75.75 0 0 0 0 1.5h3a.75.75 0 0 0 0-1.5h-3Z" clip-rule="evenodd" />
+            </svg>
+          </Fragment>
+          <Fragment slot="title">Módulo de Avisos</Fragment>
+          <Fragment slot="content">
+            Crea y gestiona avisos institucionales para comunicarircular información importante a padres y alumnos de manera efectiva.
+          </Fragment>
+        </FeatureCard>
+
+        <FeatureCard delay="500">
+          <Fragment slot="icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
+              <path fill-rule="evenodd" d="M7.5 6a4.5 4.5 0 1 1 9 0 4.5 4.5 0 0 1-9 0ZM3.751 20.105a8.25 8.25 0 0 1 16.498 0 .75.75 0 0 1-.437.695A18.683 18.683 0 0 1 12 22.5c-2.786 0-5.433-.608-7.812-1.7a.75.75 0 0 1-.437-.695Z" clip-rule="evenodd" />
+            </svg>
+          </Fragment>
+          <Fragment slot="title">Gestión de Alumnos</Fragment>
+          <Fragment slot="content">
+            Administra el registro de alumnos por grupo, grado y nivel educativo. Control de asistencia y seguimiento académico.
+          </Fragment>
+        </FeatureCard>
+
+        <FeatureCard delay="600">
+          <Fragment slot="icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
+              <path fill-rule="evenodd" d="M2.25 13.5a8.25 8.25 0 0 1 8.25-8.25.75.75 0 0 1 .75.75v6.75H18a.75.75 0 0 1 .75.75 8.25 8.25 0 0 1-16.5 0Z" clip-rule="evenodd" />
+              <path fill-rule="evenodd" d="M12.75 3a.75.75 0 0 1 .75-.75 8.25 8.25 0 0 1 8.25 8.25.75.75 0 0 1-.75.75h-7.5a.75.75 0 0 1-.75-.75V3Z" clip-rule="evenodd" />
+            </svg>
+          </Fragment>
+          <Fragment slot="title">Reportes y Estadísticas</Fragment>
+          <Fragment slot="content">
+            Genera reportes de entregas, cumplimiento de tareas y estadísticas por alumno, grupo o periodo escolar.
+          </Fragment>
+        </FeatureCard>
+      </div>
+    </Container>
+  </section>
+
+  <section class="section-padding bg-deep-blue text-white relative overflow-hidden">
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-maya-blue rounded-full blur-3xl"></div>
+    </div>
+    
+    <Container>
+      <div class="text-center max-w-3xl mx-auto relative">
+        <h2 class="text-3xl md:text-4xl lg:text-5xl mb-6 font-display">
+          ¿Interesado en iLogs?
+        </h2>
+        <p class="text-lg text-white/70 mb-10 max-w-xl mx-auto">
+          Solicita una demo personalizada y descubre cómo mejorar la comunicación escolaentre tutores y la institución.
+        </p>
+        <a href="/contact" class="btn-primary bg-jade hover:bg-jade-dark">
+          Solicitar Demo
+        </a>
+      </div>
+    </Container>
+  </section>
 </Layout>

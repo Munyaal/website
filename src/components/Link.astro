@@ -13,11 +13,17 @@ const { path, title, active = false, mobile = false } = Astro.props;
   <a
     href={path}
     class:list={[
-      "text-base font-medium transition-all duration-300",
-      mobile ? "block py-3 px-4 rounded-lg hover:bg-sand-dark/50" : "hover:text-primary",
-      active ? "text-primary" : "text-deep-blue",
+      "relative font-medium transition-all duration-300",
+      mobile ? "block py-3 px-4 rounded-lg hover:bg-jade/10" : "hover:text-jade",
+      active ? "text-jade" : "text-deep-blue",
     ]}
   >
     {title}
+    {!mobile && (
+      <span class:list={[
+        "absolute -bottom-1 left-0 w-0 h-0.5 bg-jade transition-all duration-300",
+        active ? "w-full" : "group-hover:w-full"
+      ]}></span>
+    )}
   </a>
 </li>

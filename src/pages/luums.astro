@@ -1,12 +1,160 @@
 ---
 import Layout from "~/layouts/Layout.astro";
+import Container from "~/components/Container.astro";
+import FeatureCard from "~/components/FeatureCard.astro";
+import luumsLogo from "~/assets/logos/luums.svg";
 ---
 
-<Layout title="luums">
-  <p>
-    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officia, nisi!
-    Pariatur quas recusandae quisquam! Nisi aperiam eius ad molestiae nam
-    consectetur temporibus eaque inventore, molestias numquam laudantium libero
-    voluptatibus quam?
-  </p>
+<Layout title="Luums - Software para Desarrollo Inmobiliario">
+  <section class="relative pt-24 pb-20 bg-maya-pattern overflow-hidden">
+    <div class="absolute inset-0 overflow-hidden">
+      <div class="absolute -top-40 -right-40 w-80 h-80 bg-oro/10 rounded-full blur-3xl"></div>
+      <div class="absolute -bottom-20 -left-20 w-60 h-60 bg-jade/10 rounded-full blur-3xl"></div>
+    </div>
+    
+    <Container>
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div class="space-y-6">
+          <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-oro/10 text-oro-dark text-sm font-medium">
+            <span class="w-2 h-2 rounded-full bg-oro"></span>
+            Solución On-Premise
+          </div>
+          
+          <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold font-display">
+            <span class="text-gradient-jade">Luums</span>
+          </h1>
+          
+          <p class="text-xl text-deep-blue/70 leading-relaxed">
+            Software especializado para empresas de desarrollo inmobiliario. Crea cotizaciones profesionales con tablas de amortización, envíalas por correo electrónico y lleva el control completo de pagos de tus clientes.
+          </p>
+          
+          <div class="flex flex-wrap gap-4 pt-4">
+            <a href="/contact" class="btn-primary">
+              Solicitar Demo
+            </a>
+            <a href="#caracteristicas" class="btn-secondary">
+              Ver características
+            </a>
+          </div>
+        </div>
+
+        <div class="relative">
+          <div class="absolute inset-0 bg-gradient-to-br from-oro/20 via-jade/15 to-maya-blue/10 rounded-3xl blur-3xl"></div>
+          <div class="relative bg-white/90 backdrop-blur-xl rounded-2xl shadow-2xl p-8 border border-white/50">
+            <div class="flex items-center justify-center">
+              <img src={luumsLogo.src} alt="Luums" class="h-20" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </Container>
+  </section>
+
+  <section id="caracteristicas" class="section-padding bg-white relative">
+    <Container>
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl lg:text-5xl mb-6 font-display">
+          Características principales
+        </h2>
+        <p class="text-lg text-deep-blue/60 max-w-2xl mx-auto">
+          Todo lo que necesitas para gestionar tu empresa inmobiliaria
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <FeatureCard delay="100">
+          <Fragment slot="icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
+              <path fill-rule="evenodd" d="M7.5 6a4.5 4.5 0 1 1 9 0 4.5 4.5 0 0 1-9 0ZM3.751 20.105a8.25 8.25 0 0 1 16.498 0 .75.75 0 0 1-.437.695A18.683 18.683 0 0 1 12 22.5c-2.786 0-5.433-.608-7.812-1.7a.75.75 0 0 1-.437-.695Z" clip-rule="evenodd" />
+            </svg>
+          </Fragment>
+          <Fragment slot="title">Gestión de Clientes</Fragment>
+          <Fragment slot="content">
+            Administra tu cartera de clientes con información completa: datos de contacto, preferencias, historial de compras y seguimiento personalizado.
+          </Fragment>
+        </FeatureCard>
+
+        <FeatureCard delay="200">
+          <Fragment slot="icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
+              <path fill-rule="evenodd" d="M3 6.75A.75.75 0 0 1 3.75 6h16.5a.75.75 0 0 1 0 1.5H3.75A.75.75 0 0 1 3 6.75ZM3 12a.75.75 0 0 1 .75-.75h16.5a.75.75 0 0 1 0 1.5H3.75A.75.75 0 0 1 3 12Zm8.25 5.25a.75.75 0 0 1 .75-.75h8.25a.75.75 0 0 1 0 1.5H12a.75.75 0 0 1-.75-.75Z" clip-rule="evenodd" />
+            </svg>
+          </Fragment>
+          <Fragment slot="title">Cotizaciones con Amortización</Fragment>
+          <Fragment slot="content">
+            Crea cotizaciones profesionales con tablas de amortización personalizadas. Calcula mensualidades, enganches y plazos según las políticas de tu empresa.
+          </Fragment>
+        </FeatureCard>
+
+        <FeatureCard delay="300">
+          <Fragment slot="icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
+              <path fill-rule="evenodd" d="M1.5 8.67v1.34a23.034 23.034 0 0 0 5.242.961l.722-.337a.75.75 0 0 1 .748-.074l1.528.451a22.94 22.94 0 0 0 3.624.393l.336-1.318a.75.75 0 0 1 .722-.355h1.144a.75.75 0 0 1 .724.355l.336 1.318c.98-.084 1.95-.22 2.876-.405a22.94 22.94 0 0 0 3.624-.393l1.528-.451a.75.75 0 0 1 .748.074l.722.337c.995-.316 2.016-.563 3.012-.727V8.67a.75.75 0 0 1 .75-.75h1.5a.75.75 0 0 1 .75.75v1.341a23.34 23.34 0 0 1-2.416 2.736l-.72.336a.75.75 0 0 1-.748-.074l-1.525.449a22.934 22.934 0 0 0-3.624-.393l-.336 1.318a.75.75 0 0 1-.721.355h-1.145a.75.75 0 0 1-.724-.355l-.336-1.318c-.98.084-1.95.22-2.876.405a22.934 22.934 0 0 0-3.624.393l-1.525-.449a.75.75 0 0 1-.748.074l-.72-.336A23.34 23.34 0 0 1 3 12.748V12a.75.75 0 0 1 .75-.75h1.5a.75.75 0 0 1 .75.75v.748Z" clip-rule="evenodd" />
+            </svg>
+          </Fragment>
+          <Fragment slot="title">Envío por Correo</Fragment>
+          <Fragment slot="content">
+            Envía cotizaciones directamente por correo electrónico desde la plataforma. Formatos profesionales listos para enviar a tus clientes.
+          </Fragment>
+        </FeatureCard>
+
+        <FeatureCard delay="400">
+          <Fragment slot="icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
+              <path fill-rule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25Zm-1.527 4.774a.75.75 0 0 1 .449-.575l3.501 1.75a.75.75 0 0 1 .275.648l-.724 2.966a.75.75 0 0 1 .4.632v.01a11.193 11.193 0 0 1 2.521 3.572h.569a.75.75 0 0 1 .575.449l1.478 2.964a.75.75 0 0 1-.062 1.035l-3.074 4.237a.75.75 0 0 1-1.035.062l-2.964-1.478a.75.75 0 0 1-.449-.575v-1.511a11.193 11.193 0 0 1-3.572-2.521h-.568a.75.75 0 0 1-.632-.4l-.724-2.965a.75.75 0 0 1-.062-.275l.724-2.966a.75.75 0 0 1 .449-.575l3.5-1.75Z" clip-rule="evenodd" />
+            </svg>
+          </Fragment>
+          <Fragment slot="title">Control de Pagos</Fragment>
+          <Fragment slot="content">
+            Lleva el seguimiento de pagos de cada cliente. Registra abonos, saldos pendientes y estados de cuenta actualizados en tiempo real.
+          </Fragment>
+        </FeatureCard>
+
+        <FeatureCard delay="500">
+          <Fragment slot="icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
+              <path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm13.36-1.814a.75.75 0 1 0-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.14-.094l3.75-5.25Z" clip-rule="evenodd" />
+            </svg>
+          </Fragment>
+          <Fragment slot="title">Inventario de Propiedades</Fragment>
+          <Fragment slot="content">
+            Administra tu inventario de casas, departamentos, terrenos y locales comerciales. Disponibilidad, precios y características actualizadas.
+          </Fragment>
+        </FeatureCard>
+
+        <FeatureCard delay="600">
+          <Fragment slot="icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
+              <path fill-rule="evenodd" d="M2.25 13.5a8.25 8.25 0 0 1 8.25-8.25.75.75 0 0 1 .75.75v6.75H18a.75.75 0 0 1 .75.75 8.25 8.25 0 0 1-16.5 0Z" clip-rule="evenodd" />
+              <path fill-rule="evenodd" d="M12.75 3a.75.75 0 0 1 .75-.75 8.25 8.25 0 0 1 8.25 8.25.75.75 0 0 1-.75.75h-7.5a.75.75 0 0 1-.75-.75V3Z" clip-rule="evenodd" />
+            </svg>
+          </Fragment>
+          <Fragment slot="title">Reportes Comerciales</Fragment>
+          <Fragment slot="content">
+            Genera reportes de ventas, comisiones, viabilidad económica y proyecciones. Toma decisiones informadas con datos actualizados.
+          </Fragment>
+        </FeatureCard>
+      </div>
+    </Container>
+  </section>
+
+  <section class="section-padding bg-deep-blue text-white relative overflow-hidden">
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-oro rounded-full blur-3xl"></div>
+    </div>
+    
+    <Container>
+      <div class="text-center max-w-3xl mx-auto relative">
+        <h2 class="text-3xl md:text-4xl lg:text-5xl mb-6 font-display">
+          ¿Interesado en Luums?
+        </h2>
+        <p class="text-lg text-white/70 mb-10 max-w-xl mx-auto">
+          Solicita una demo personalizada y descubre cómo optimizar la gestión de tu empresa inmobiliaria.
+        </p>
+        <a href="/contact" class="btn-primary bg-jade hover:bg-jade-dark">
+          Solicitar Demo
+        </a>
+      </div>
+    </Container>
+  </section>
 </Layout>

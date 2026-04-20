@@ -1,34 +1,43 @@
 ---
 import Layout from "~/layouts/Layout.astro";
+import Container from "~/components/Container.astro";
 import Person from "~/components/Person.astro";
 import alex from "~/assets/team/alex.png";
 import caleb from "~/assets/team/caleb.png";
 import leonardo from "~/assets/team/leonardo.png";
 ---
 
-<Layout>
-  <div class="space-y-16">
-    <header class="space-y-8 mx-auto max-w-4xl px-4">
-      <h1 class="text-4xl md:text-6xl font-medium text-center">
-        Quiénes Somos
-      </h1>
+<Layout title="Quiénes Somos - Munyaal">
+  <section class="relative pt-24 pb-16 bg-maya-pattern overflow-hidden">
+    <div class="absolute inset-0 overflow-hidden">
+      <div class="absolute -top-20 -right-20 w-64 h-64 bg-jade/10 rounded-full blur-3xl"></div>
+      <div class="absolute -bottom-10 -left-10 w-48 h-48 bg-maya-blue/10 rounded-full blur-3xl"></div>
+    </div>
+    
+    <Container>
+      <div class="max-w-4xl mx-auto text-center space-y-6">
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold font-display">
+          Quiénes Somos
+        </h1>
+        <p class="text-lg md:text-xl text-deep-blue/70 leading-relaxed max-w-2xl mx-auto">
+          Somos un grupo de jóvenes apasionados por la tecnología y el desarrollo de software. Fundamos nuestra empresa en el 2018, en <span class="text-jade font-semibold">Playa del Carmen</span>, con el sueño de transformar ideas en soluciones innovadoras que impulsen negocios y mejoren procesos.
+        </p>
+      </div>
+    </Container>
+  </section>
 
-      <p class="text-base md:text-lg text-center">
-        Somos un grupo de jóvenes apasionados por la tecnología y el desarrollo
-        de software. Fundamos nuestra empresa en el 2018, en Playa del Carmen,
-        con el sueño de transformar ideas en soluciones innovadoras que impulsen
-        negocios y mejoren procesos.
-      </p>
-    </header>
+  <section class="section-padding bg-white relative">
+    <Container>
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl lg:text-5xl mb-6 font-display">
+          Nuestro Equipo
+        </h2>
+        <p class="text-lg text-deep-blue/60 max-w-xl mx-auto">
+          Profesionales comprometidos con la excelencia tecnológica
+        </p>
+      </div>
 
-    <section
-      class="space-y-4 mx-auto max-w-4xl px-4 py-10"
-    >
-      <h2 class="text-2xl md:text-4xl font-medium text-center">
-        Equipo de trabajo
-      </h2>
-
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-5xl mx-auto">
         <Person
           name="Alex Pech"
           role="Desarrollador Full Stack"
@@ -45,6 +54,22 @@ import leonardo from "~/assets/team/leonardo.png";
           picture={leonardo.src}
         />
       </div>
-    </section>
-  </div>
+    </Container>
+  </section>
+
+  <section class="section-padding bg-deep-blue text-white relative overflow-hidden">
+    <Container>
+      <div class="text-center max-w-3xl mx-auto relative">
+        <h2 class="text-3xl md:text-4xl lg:text-5xl mb-6 font-display">
+          ¿Listo para trabajar con nosotros?
+        </h2>
+        <p class="text-lg text-white/70 mb-10 max-w-xl mx-auto">
+          Estamos listos para transformar tus ideas en soluciones de software que impulsen tu negocio.
+        </p>
+        <a href="/contact" class="btn-primary bg-jade hover:bg-jade-dark">
+          Contáctanos
+        </a>
+      </div>
+    </Container>
+  </section>
 </Layout>

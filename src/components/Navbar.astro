@@ -21,14 +21,18 @@ const menuItems = [
 const currentPath = Astro.url.pathname;
 ---
 
-<header class="fixed top-0 left-0 right-0 z-50 glass border-b border-sand-dark/50">
+<header class="fixed top-0 left-0 right-0 z-50 glass">
   <Container>
     <div class="flex justify-between items-center h-20">
-      <a href="/" class="flex items-center">
-        <img src={logo.src} class="h-12" alt="Munyaal" />
+      <a href="/" class="flex items-center group">
+        <img 
+          src={logo.src} 
+          class="h-10 transition-transform duration-300 group-hover:scale-105" 
+          alt="Munyaal" 
+        />
       </a>
 
-      <nav class="hidden md:flex items-center gap-8">
+      <nav class="hidden md:flex items-center gap-10">
         {menuItems.map(({ title, path }) => (
           <Link
             title={title}
@@ -38,7 +42,7 @@ const currentPath = Astro.url.pathname;
         ))}
         <a
           href="/contact"
-          class="btn-primary text-sm py-2.5 px-5"
+          class="btn-primary text-sm py-2.5 px-6"
         >
           Hablemos
         </a>
@@ -46,7 +50,7 @@ const currentPath = Astro.url.pathname;
 
       <button
         id="menu-button"
-        class="md:hidden p-2 rounded-lg hover:bg-sand-dark/50 transition-colors"
+        class="md:hidden p-2 rounded-lg hover:bg-jade/10 transition-colors duration-300"
         aria-label="Menú"
       >
         <svg
