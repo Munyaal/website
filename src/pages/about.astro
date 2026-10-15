@@ -4,7 +4,6 @@ import Container from "~/components/Container.astro";
 import Person from "~/components/Person.astro";
 import alex from "~/assets/team/alex.png";
 import caleb from "~/assets/team/caleb.png";
-import leonardo from "~/assets/team/leonardo.png";
 ---
 
 <Layout title="Quiénes Somos - Munyaal">
@@ -37,21 +36,16 @@ import leonardo from "~/assets/team/leonardo.png";
         </p>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-5xl mx-auto">
-        <Person
-          name="Alex Pech"
-          role="Desarrollador Full Stack"
-          picture={alex.src}
-        />
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-2xl mx-auto">
         <Person
           name="Caleb Mora"
           role="Project Manager"
           picture={caleb.src}
         />
         <Person
-          name="Leonardo Alvarez"
+          name="Alex Pech"
           role="Desarrollador Full Stack"
-          picture={leonardo.src}
+          picture={alex.src}
         />
       </div>
     </Container>
